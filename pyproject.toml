@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "diginori-api"
+version = "0.1.0"
+description = "diginori backend in qoddi.com"
+authors = ["becky2sawyer <becky2sawyer@gmail.com>"]
+readme = "README.md"
+packages = [{include = "diginori_api"}]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
