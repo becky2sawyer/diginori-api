@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "diginori-api"
-version = "0.2.1"
+version = "0.2.2"
 description = "diginori backend in qoddi.com"
 authors = ["becky2sawyer <becky2sawyer@gmail.com>"]
 readme = "README.md"
@@ -11,6 +11,9 @@ python = "^3.9"
 fastapi = {extras = ["all"], version = "^0.87.0"}
 strawberry-graphql = {extras = ["fastapi"], version = "^0.142.2"}
 
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.2.0"
 
 [build-system]
 requires = ["poetry-core"]
