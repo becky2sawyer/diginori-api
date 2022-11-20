@@ -17,10 +17,20 @@ poetry shell
 poetry install
 ```
 
-# Run Server
+# Run dev server
 
 ```
 sh start.sh
+```
+
+# Pre Deploy
+
+- https://devcenter.qoddi.com/python/
+
+```
+sh poetry2requirements.sh
+cat runtime.txt
+cat Procfile
 ```
 
 # Deploy Server
