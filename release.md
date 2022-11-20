@@ -5,3 +5,4 @@
 # 0.2
 
 - [ ] add [graphql](https://fastapi.tiangolo.com/advanced/graphql/?h=) - strawberry
+- [x] [CROS](https://fastapi.tiangolo.com/tutorial/cors/?h=cros#use-corsmiddleware)
