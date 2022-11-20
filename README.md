@@ -26,3 +26,4 @@ sh start.sh
 # Deploy Server
 
 - https://app.qoddi.com/
+- http://votandwslq.eu10.qoddiapp.com/docs
