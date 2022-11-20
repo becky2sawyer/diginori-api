@@ -8,6 +8,7 @@ packages = [{include = "diginori_api"}]
 
 [tool.poetry.dependencies]
 python = "^3.9"
+fastapi = {extras = ["all"], version = "^0.87.0"}
 
 
 [build-system]
