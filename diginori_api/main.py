@@ -32,6 +32,11 @@ description = """
 
 * **Get Lotto Numbering**.
 * **Get your own satellite coordinates** (_not implemented_).
+
+### GraphQL
+- [digiNORI_GraphQL](/graphql)
+
+----
 """
 app = FastAPI(
     title="digiNORI API",

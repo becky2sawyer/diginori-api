@@ -19,6 +19,7 @@
 
 - [x] [version of the API](https://fastapi.tiangolo.com/tutorial/metadata/)
 - [x] [Get your own satellite coordinates](https://ko.wikipedia.org/wiki/%EC%B2%9C%EA%B5%AC%EC%A2%8C%ED%91%9C%EA%B3%84) dummy
+- [x] link graphql
 
 ---
 
