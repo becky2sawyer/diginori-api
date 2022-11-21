@@ -22,7 +22,36 @@ schema = strawberry.Schema(query=Query)
 
 graphql_app = GraphQL(schema)
 
-app = FastAPI()
+description = """
+### The world of **dreams**, **love**, and **coding**. ☕
+### To Infinity, and Beyond! 🚀
+
+![diginori](https://diginori.com/diginori-2-ink.png)
+
+### You will be able to:
+
+* **Get Lotto Numbering**.
+* **Get your own satellite coordinates** (_not implemented_).
+
+### GraphQL
+- [digiNORI_GraphQL](/graphql)
+
+----
+"""
+app = FastAPI(
+    title="digiNORI API",
+    description=description,
+    version="0.3.0",
+    contact={
+        "name": "Visit the digiNORI.com",
+        "url": "https://diginori.com",
+        # "email": "dp@x-force.example.com",
+    },
+    license_info={
+        "name": "Apache 2.0",
+        "url": "https://www.apache.org/licenses/LICENSE-2.0.html",
+    },
+)
 
 origins = [
     "http://localhost",
@@ -97,3 +126,25 @@ async def predict_lotto():
         _type_: [1,2,3,4,5,45]
     """
     return predict_lotto_number()
+
+
+@app.get("/get_satellite_coordinates")
+async def get_satellite_coordinates():
+    """get your own satellite coordinates DUMMY
+
+    - https://www.celestis.com/resources/faq/what-are-the-azimuth-and-elevation-of-a-satellite/
+    - https://www.sciencedirect.com/topics/physics-and-astronomy/elevation-angle
+    - https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=karipr&logNo=221347805831
+    - elevation - height
+    - azimuth
+    - angle - ceiling distance
+    - angular_speed
+
+    """
+    import random
+    return {
+        "elevation": random.random(),
+        "azimuth": random.random(),
+        "angle": random.random(),
+        "angular_speed": random.random(),
+    }
