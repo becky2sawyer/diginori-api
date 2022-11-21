@@ -23,7 +23,8 @@ schema = strawberry.Schema(query=Query)
 graphql_app = GraphQL(schema)
 
 description = """
-The world of **dreams**, **love**, and **coding**. ☕ 🚀
+### The world of **dreams**, **love**, and **coding**. ☕
+### To Infinity, and Beyond! 🚀
 
 ![diginori](https://diginori.com/diginori-2-ink.png)
 
@@ -35,7 +36,7 @@ The world of **dreams**, **love**, and **coding**. ☕ 🚀
 app = FastAPI(
     title="digiNORI API",
     description=description,
-    version="0.2.3",
+    version="0.3.0",
     contact={
         "name": "Visit the digiNORI.com",
         "url": "https://diginori.com",

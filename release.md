@@ -10,7 +10,7 @@
 
 - [x] [CROS](https://fastapi.tiangolo.com/tutorial/cors/?h=cros#use-corsmiddleware)
 
-# 0.2.2
+# 0.3.0
 
 - [x] add api - /meaning_of_names
 - [x] add api - /lotto
