@@ -10,6 +10,7 @@ packages = [{include = "diginori_api"}]
 python = "^3.9"
 fastapi = {extras = ["all"], version = "^0.87.0"}
 strawberry-graphql = {extras = ["fastapi"], version = "^0.142.2"}
+redis = "^4.5.1"
 
 
 [tool.poetry.group.dev.dependencies]
