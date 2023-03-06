@@ -148,3 +148,12 @@ async def get_satellite_coordinates():
         "angle": random.random(),
         "angular_speed": random.random(),
     }
+
+
+@app.get("/m2o/dag")
+async def get_satellite_coordinates():
+    return [
+        {"name": "ingest_abc_def_1", "cron": "* 1 * * *"},
+        {"name": "ingest_abc_def_2", "cron": "* 2 * * *"},
+       
+    ]
