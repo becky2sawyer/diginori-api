@@ -10,3 +10,26 @@ def select(sql, db="sqllite.db") -> list:
     con.close()
     return df_list
 
+
+def insert_config(id: int, name: str, config: str, db="sqllite.db") -> bool:
+    con = sqlite3.connect(db)
+    cur = con.cursor()
+    cur.execute(f"""
+        insert into test (id, name, config)
+        values ({id}, '{name}', '{config}');
+    """)
+    con.commit()
+    con.close()
+    return True
+
+
+def insert_name_card(name: str, age: int, db="sqllite.db") -> bool:
+    con = sqlite3.connect(db)
+    cur = con.cursor()
+    cur.execute(f"""
+            insert into name_card (name, age)
+            values ('{name}', {age});
+        """)
+    con.commit()
+    con.close()
+    return True

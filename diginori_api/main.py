@@ -1,9 +1,11 @@
 import strawberry
-from fastapi import FastAPI
+from fastapi import FastAPI, Query
+from pydantic import Required
 from strawberry.asgi import GraphQL
 from fastapi.middleware.cors import CORSMiddleware
 from diginori_api.internal.lotto import predict_lotto_number
-from diginori_api.database.crud import select
+from diginori_api.database.crud import select, insert_config, insert_name_card
+
 
 @strawberry.type
 class User:
@@ -158,12 +160,29 @@ async def get_satellite_coordinates():
        
     ]
 
-import pandas as pd
-import sqlite3
-import json
 
 @app.get("/db/test")
 async def select_test():
-    r = select("SELECT * from test")
+    r = select("SELECT id,name,config from test order by id desc")
+    return r
+
+
+@app.put("/db/insert")
+async def insert_conf(id: int, name: str, config: str):
+    results = {"id": id, "name": name, "config": config}
+    insert_config(id=id, name=name, config=config)
+    return results
+
+
+@app.put("/db/add_name_card")
+async def add_name_card(name: str, age: int):
+    results = {"name": name, "age": age}
+    insert_name_card(name=name, age=age)
+    return results
+
+
+@app.get("/db/name_card")
+async def select_test():
+    r = select("SELECT name, age from name_card order by age desc")
     return r
 
