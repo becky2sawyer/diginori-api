@@ -3,7 +3,7 @@ from fastapi import FastAPI
 from strawberry.asgi import GraphQL
 from fastapi.middleware.cors import CORSMiddleware
 from diginori_api.internal.lotto import predict_lotto_number
-
+from diginori_api.database.crud import select
 
 @strawberry.type
 class User:
@@ -148,3 +148,22 @@ async def get_satellite_coordinates():
         "angle": random.random(),
         "angular_speed": random.random(),
     }
+
+
+@app.get("/m2o/dag")
+async def get_satellite_coordinates():
+    return [
+        {"name": "ingest_abc_def_1", "cron": "* 1 * * *"},
+        {"name": "ingest_abc_def_2", "cron": "* 2 * * *"},
+       
+    ]
+
+import pandas as pd
+import sqlite3
+import json
+
+@app.get("/db/test")
+async def select_test():
+    r = select("SELECT * from test")
+    return r
+
