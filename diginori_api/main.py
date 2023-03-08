@@ -56,11 +56,7 @@ app = FastAPI(
 )
 
 origins = [
-    "http://localhost",
-    "http://localhost:9000",
     "https://diginori.com",
-    "https://www.diginori.com",
-    "https://diginori-universe.github.io",
 ]
 
 app.add_middleware(
